@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Ruta
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ruta\ here.\r\n\ \r\n\ @author\ (Johann\ Amaya)\ \r\n\ @version\ (Ciclo\ 2)\r\n
+comment1.params=xi\ yi\ xf\ yf
+comment1.target=Ruta(int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=int[]\ listRuta()
+comment3.params=
+comment3.target=void\ makeVisible()
+comment4.params=
+comment4.target=void\ makeInvisible()
+numComments=5

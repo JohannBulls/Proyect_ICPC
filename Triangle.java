@@ -22,33 +22,20 @@ public class Triangle{
      * Create a new triangle at default position with default color.
      */
     public Triangle(){
-        height = 30;
-        width = 40;
+        height = 20;
+        width = 20;
         xPosition = 140;
         yPosition = 15;
         color = "green";
         isVisible = false;
     }
 
-    public int getx(){
-        return xPosition;
-    }
-    
-    public int gety(){
-        return yPosition;
-    }
-    
     /**
      * Make this triangle visible. If it was already visible, do nothing.
      */
     public void makeVisible(){
         isVisible = true;
         draw();
-    }
-    
-    public void changePotition(int x, int y){
-        xPosition = x;
-        yPosition = y;
     }
     
     /**
@@ -168,7 +155,20 @@ public class Triangle{
         color = newColor;
         draw();
     }
-
+    
+    public void changePosition(int x, int y){
+        xPosition = x;
+        yPosition = y;
+    }
+    
+    public int getx(){
+        return xPosition;
+    }
+    
+    public int gety(){
+        return yPosition;
+    }
+    
     /*
      * Draw the triangle with current specifications on screen.
      */
