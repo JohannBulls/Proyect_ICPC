@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Interseccion
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Interseccion\ here.\r\n\ \r\n\ @author\ (Johann\ Amaya)\ \r\n\ @version\ (Ciclo\ 2)\r\n
+comment1.params=color\ x\ y
+comment1.target=Interseccion(java.lang.String,\ int,\ int)
+comment2.params=
+comment2.target=java.lang.String\ getColor()
+comment3.params=
+comment3.target=void\ makeVisible()
+comment4.params=
+comment4.target=void\ makeInvisible()
+comment5.params=
+comment5.target=int\ getx()
+comment6.params=
+comment6.target=int\ gety()
+numComments=7

@@ -1,17 +1,22 @@
 import java.util.ArrayList;
+import javax.swing.*;  
 /**
- * ICPC class lac is responsible for displaying the road network..
+ * Write a description of class ICPC here.
  *
- * @author (Amaya-Tellez)
+ * @author (Johann Amaya)
+ * @version (a version number or a date)
  */
 
 public class ICPC
 {
     // instance variables - replace the example below with your own
-    private int length,width ;
-    private ArrayList<Circle> intersecciones;
+    private int length,width,sizeSeñal ;
+    public ArrayList<Interseccion> intersecciones;
     private int xi,yi,xf,yf;
-    private ArrayList<line> rutas;
+    private int aPosition;
+    private int bPosition;
+    public ArrayList<Ruta> rutas;
+    public ArrayList<Senales> senal;
     /**
      * Constructor for objects of class ICPC
      */
@@ -19,63 +24,80 @@ public class ICPC
     {
         this.length = length;
         this.width = width;
-        intersecciones = new ArrayList<Circle>();
-        rutas =new ArrayList<line>();
+        intersecciones = new ArrayList<Interseccion>();
+        rutas =new ArrayList<Ruta>();
+        senal=new ArrayList<Senales>();
     }
     
-    /**
-     * Constructor for objects of class ICPC
-     */
-    public void addIntersection(String color, int x, int y)
-    {
-        Circle inter = new Circle();
-        inter.changeColor(color);
-        inter.changePotition(x, y);
-        intersecciones.add(inter);
+    public ICPC (int length, int width, int cost){
+    
     }
     
-    /**
-     * is in charge of adding the points that you want to connect in the road network
-     */
-    public void addRoute(String intersectionA, String intersectionB)
-    {   
-        for (int i=0; i<intersecciones.size();i++){
-            if (i == Integer.parseInt(intersectionA)){
-                xi=intersecciones.get(i).getx();
-                yi=intersecciones.get(i).gety();
-            }
-            
-            if (i == Integer.parseInt(intersectionB)){
-                xf=intersecciones.get(i).getx();
-                yf=intersecciones.get(i).gety();
+    public void addIntersection(String color, int x, int y) {
+        boolean validador = false;
+        
+        for (int i=0; i< intersecciones.size();i++){
+            if (color.equals(intersecciones.get(i).getColor()) || ( x==(intersecciones.get(i).getx())  && y==(intersecciones.get(i).gety()) )){
+                validador=true;
             }
         }
-        line rt = new line(xi,yi,xf,yf);
-        rutas.add(rt);
+
+        if(validador==true){
+            alerta("No se puede agregar la interseccion el color ya existe");
+        }else{
+            Interseccion inter = new Interseccion(color,x,y);
+            intersecciones.add(inter);
+        }
     }
     
-    public void putSign(String intersectionA, String intersectionB, int speedLimit)
-    {
-    
-    }
-    
-    /**
-     * is responsible for eliminating the intersection of the road network
-     */
-    public void delItersection(String color)
+     public void delItersection(String color)
     {
         for (int i = 0; i<intersecciones.size();i++){
-            if (intersecciones.get(i).getcolor()== color){
+            if (intersecciones.get(i).getColor()== color){
                 intersecciones.remove(i);
             }
         }
     }
     
     /**
-     * add the points of the road that you want to join
+     * Mensaje de alerta
      */
-    public void delRoad(String locationA, String locationB)
-    {
+    public void alerta(String message) {
+        JOptionPane.showMessageDialog(null, message);
+    }
+    
+    public void addRoute(String intersectionA, String intersectionB)
+    {           
+        for (int i=0; i<intersecciones.size();i++){
+            if (intersecciones.get(i).getColor().equals(intersectionA)){
+                xi=intersecciones.get(i).getx();
+                yi=intersecciones.get(i).gety();
+            }
+            
+            if (intersecciones.get(i).getColor().equals(intersectionB)){
+                xf=intersecciones.get(i).getx();
+                yf=intersecciones.get(i).gety();
+            }
+        }
+        
+        boolean validador = false;
+        
+        for (int i=0; i< rutas.size();i++){
+            int[] listacordenadas=rutas.get(i).listRuta();
+            if (xi==listacordenadas[0] && yi==listacordenadas[1] && xf==listacordenadas[2] && yf==listacordenadas[3] ){
+                validador=true;
+            }
+        }
+
+        if(validador==true){
+            alerta("No se puede agregar la ruta ya existe");
+        }else{
+            Ruta rt = new Ruta(xi,yi,xf,yf);
+            rutas.add(rt);
+        }
+    }
+    
+    public void delRoad(String locationA, String locationB){
         for (int i=0; i<intersecciones.size();i++){
             if (i == Integer.parseInt(locationA)){
                 rutas.remove(i);
@@ -85,18 +107,60 @@ public class ICPC
                 rutas.remove(i);
             }
         }
-        line rt = new line(xi,yi,xf,yf);
-        rutas.add(rt);
     }
     
-    public void removeSign(String locationA, String locationB)
+    public void putSign(String intersectionA, String intersectionB)
     {
+        for (int i=0; i<intersecciones.size();i++){
+            if (intersecciones.get(i).getColor().equals(intersectionA)){
+                xi=intersecciones.get(i).getx();
+                yi=intersecciones.get(i).gety();
+            }
+            
+            if (intersecciones.get(i).getColor().equals(intersectionB)){
+                xf=intersecciones.get(i).getx();
+                yf=intersecciones.get(i).gety();
+            }
+        }
+        aPosition =(xi+xf)/2;
+        bPosition =(yi+yf)/2;
+        boolean validador = false,validador2 = false;
         
+        for (int i=0; i< rutas.size();i++){
+            int[] listacordenadas=rutas.get(i).listRuta();
+            if (xi!=listacordenadas[0] || yi!=listacordenadas[1] || xf!=listacordenadas[2] || yf!=listacordenadas[3] ){
+                validador=true;
+            }
+        }
+        
+        for (int i=0; i< senal.size();i++){
+            if (aPosition==senal.get(i).getx() && bPosition==senal.get(i).gety() ){
+                validador=true;
+            }
+        } 
+
+        if(validador==true){
+            alerta("No se puede agregar la señal porque no existe la ruta");
+        }else if(validador2==true){
+            alerta("No se puede agregar la señal ya existe");
+        }else{
+            Senales snl = new Senales(aPosition,bPosition);
+            senal.add(snl);
+        }       
+    }
+
+   public void removeSign(String locationA, String locationB)
+    {
+        for (int i=0; i<senal.size();i++){
+            if (i == Integer.parseInt(locationA)){
+                rutas.remove(i);
+            }
+            if (i == Integer.parseInt(locationB)){
+                rutas.remove(i);
+            }
+        }
     }
     
-    /**
-     * check the number of routes and intersections that have so far
-     */
     public void consult(){
         int in = intersecciones.size();
         int rt = rutas.size();
@@ -104,9 +168,6 @@ public class ICPC
         System.out.println("El numero de rutas es: " + rt);
     }
     
-    /**
-     * makes the intersections of the road network visible, if they are already visible it does nothing
-     */
     public void makeVisible(){
         for (int i=0 ; i<intersecciones.size();i++){
             intersecciones.get(i).makeVisible();   
@@ -114,11 +175,11 @@ public class ICPC
         for (int j=0 ; j<rutas.size();j++){    
             rutas.get(j).makeVisible();
         }
+        for (int j=0 ; j<senal.size();j++){    
+            senal.get(j).makeVisible();
+        }
     }
     
-    /**
-     * makes the intersections of the road network invisible, if they are already invisible it does nothing
-     */
     public void makeInvisible(){
         for (int i=0 ; i<intersecciones.size();i++){
             intersecciones.get(i).makeInvisible();   
@@ -126,12 +187,18 @@ public class ICPC
         for (int j=0 ; j<rutas.size();j++){    
             rutas.get(j).makeInvisible();
         }
+        for (int j=0 ; j<senal.size();j++){    
+            senal.get(j).makeVisible();
+        }
     }
     
-    /**
-     *  complete road network
-     */
     public void finish(){
         System.exit(0);
     }
+    
+    public boolean ok(){
+        boolean Ok= false;
+        return Ok;
+    }
 }
+
