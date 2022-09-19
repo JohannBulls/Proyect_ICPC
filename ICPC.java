@@ -15,6 +15,7 @@ public class ICPC
     private int xi,yi,xf,yf;
     private int aPosition;
     private int bPosition;
+    private boolean ok;
     public ArrayList<Ruta> rutas;
     public ArrayList<Senales> senal;
     /**
@@ -27,10 +28,11 @@ public class ICPC
         intersecciones = new ArrayList<Interseccion>();
         rutas =new ArrayList<Ruta>();
         senal=new ArrayList<Senales>();
+        ok = true;
     }
     
     public ICPC (int length, int width, int cost){
-    
+        ok = true;
     }
     
     public void addIntersection(String color, int x, int y) {
@@ -44,9 +46,11 @@ public class ICPC
 
         if(validador==true){
             alerta("No se puede agregar la interseccion el color ya existe");
+            ok = false;
         }else{
             Interseccion inter = new Interseccion(color,x,y);
             intersecciones.add(inter);
+            ok = true;
         }
     }
     
@@ -55,6 +59,7 @@ public class ICPC
         for (int i = 0; i<intersecciones.size();i++){
             if (intersecciones.get(i).getColor()== color){
                 intersecciones.remove(i);
+                ok = true;
             }
         }
     }
@@ -64,6 +69,7 @@ public class ICPC
      */
     public void alerta(String message) {
         JOptionPane.showMessageDialog(null, message);
+        ok = true;
     }
     
     public void addRoute(String intersectionA, String intersectionB)
@@ -72,11 +78,13 @@ public class ICPC
             if (intersecciones.get(i).getColor().equals(intersectionA)){
                 xi=intersecciones.get(i).getx();
                 yi=intersecciones.get(i).gety();
+                ok = true;
             }
             
             if (intersecciones.get(i).getColor().equals(intersectionB)){
                 xf=intersecciones.get(i).getx();
                 yf=intersecciones.get(i).gety();
+                ok = true;
             }
         }
         
@@ -86,12 +94,15 @@ public class ICPC
             int[] listacordenadas=rutas.get(i).listRuta();
             if (xi==listacordenadas[0] && yi==listacordenadas[1] && xf==listacordenadas[2] && yf==listacordenadas[3] ){
                 validador=true;
+                ok = true;
             }
         }
 
         if(validador==true){
+            ok = false;
             alerta("No se puede agregar la ruta ya existe");
         }else{
+            ok = true;
             Ruta rt = new Ruta(xi,yi,xf,yf);
             rutas.add(rt);
         }
@@ -105,6 +116,7 @@ public class ICPC
             
             if (i == Integer.parseInt(locationB)){
                 rutas.remove(i);
+                ok = true;
             }
         }
     }
@@ -140,10 +152,13 @@ public class ICPC
         } 
 
         if(validador==true){
+            ok = false;
             alerta("No se puede agregar la señal porque no existe la ruta");
         }else if(validador2==true){
+            ok = false;
             alerta("No se puede agregar la señal ya existe");
         }else{
+            ok = true;
             Senales snl = new Senales(aPosition,bPosition);
             senal.add(snl);
         }       
@@ -151,6 +166,7 @@ public class ICPC
 
    public void removeSign(String locationA, String locationB)
     {
+        ok = true;
         for (int i=0; i<senal.size();i++){
             if (i == Integer.parseInt(locationA)){
                 rutas.remove(i);
@@ -162,6 +178,7 @@ public class ICPC
     }
     
     public void consult(){
+        ok = true;
         int in = intersecciones.size();
         int rt = rutas.size();
         System.out.println("El numero de intersecciones es: " + in);
@@ -169,6 +186,7 @@ public class ICPC
     }
     
     public void makeVisible(){
+        ok = true;
         for (int i=0 ; i<intersecciones.size();i++){
             intersecciones.get(i).makeVisible();   
         }
@@ -181,6 +199,7 @@ public class ICPC
     }
     
     public void makeInvisible(){
+        ok = true;
         for (int i=0 ; i<intersecciones.size();i++){
             intersecciones.get(i).makeInvisible();   
         }
@@ -193,12 +212,12 @@ public class ICPC
     }
     
     public void finish(){
+        ok = true;
         System.exit(0);
     }
     
     public boolean ok(){
-        boolean Ok= false;
-        return Ok;
+        return ok;
     }
 }
 
