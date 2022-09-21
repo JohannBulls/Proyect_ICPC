@@ -38,6 +38,7 @@ public class Canvas{
     private JFrame frame;
     private CanvasPane canvas;
     private Graphics2D graphic;
+    private Graphics2D text;
     private Color backgroundColour;
     private Image canvasImage;
     private List <Object> objects;
@@ -60,6 +61,7 @@ public class Canvas{
         frame.pack();
         objects = new ArrayList <Object>();
         shapes = new HashMap <Object,ShapeDescription>();
+    
     }
     public void drawText(String text, int x, int y ) {
         graphic.drawString(text, x, y);
