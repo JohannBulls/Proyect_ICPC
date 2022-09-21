@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Senales
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Se\u00F1ales\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=x\ y
-comment1.target=Senales(int,\ int)
+comment1.params=x\ y\ cost
+comment1.target=Senales(int,\ int,\ int)
 comment2.params=
 comment2.target=void\ makeVisible()
 comment3.params=

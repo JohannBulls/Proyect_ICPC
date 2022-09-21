@@ -1,3 +1,4 @@
+import java.awt.Graphics;
 
 /**
  * Write a description of class Señales here.
@@ -9,14 +10,17 @@ public class Senales
 {
     private Triangle senal;
     private int x,y,limite;
-    
-    public Senales(int x,int y){
+    private Graphics a;
+    public Senales(int x,int y,int cost){
         this.x =x;
         this.y =y;
+        this.limite=cost;
         String color = "green";
         senal = new Triangle();
         senal.changeColor(color);
         senal.changePosition(x, y);
+        Canvas canvas = Canvas.getCanvas();
+        canvas.drawText("juhan es gay",x, y);
         
     }
     

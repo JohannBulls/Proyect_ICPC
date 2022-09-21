@@ -147,11 +147,11 @@ public class ICPC
         
         for (int i=0; i< senal.size();i++){
             if (aPosition==senal.get(i).getx() && bPosition==senal.get(i).gety() ){
-                validador=true;
+                validador2=true;
             }
         } 
-
-        if(validador==true){
+        
+        if(validador==false){
             ok = false;
             alerta("No se puede agregar la señal porque no existe la ruta");
         }else if(validador2==true){
@@ -159,7 +159,7 @@ public class ICPC
             alerta("No se puede agregar la señal ya existe");
         }else{
             ok = true;
-            Senales snl = new Senales(aPosition,bPosition);
+            Senales snl = new Senales(aPosition,bPosition,10);
             senal.add(snl);
         }       
     }
