@@ -15,17 +15,17 @@ public class Senales
         this.x =x;
         this.y =y;
         this.limite=cost;
-        String color = "green";
+        String color = "black";
         senal = new Triangle();
         senal.changeColor(color);
         senal.changePosition(x, y);
-        Canvas canvas = Canvas.getCanvas();
-        canvas.drawText("juhan es gay",x, y);
         
     }
     
     public void makeVisible(){
         senal.makeVisible();
+        Canvas canvas = Canvas.getCanvas();
+        canvas.drawText(String.valueOf(limite),x, y);
     }
     
     public void makeInvisible(){

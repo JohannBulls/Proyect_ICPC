@@ -15,6 +15,7 @@ public class ICPC
     private int xi,yi,xf,yf;
     private int aPosition;
     private int bPosition;
+    private int cost;
     private boolean ok;
     public ArrayList<Ruta> rutas;
     public ArrayList<Senales> senal;
@@ -25,6 +26,7 @@ public class ICPC
     {
         this.length = length;
         this.width = width;
+        this.cost= 10;
         intersecciones = new ArrayList<Interseccion>();
         rutas =new ArrayList<Ruta>();
         senal=new ArrayList<Senales>();
@@ -32,6 +34,12 @@ public class ICPC
     }
     
     public ICPC (int length, int width, int cost){
+        this.length = length;
+        this.width = width;
+        this.cost = cost;
+        intersecciones = new ArrayList<Interseccion>();
+        rutas =new ArrayList<Ruta>();
+        senal=new ArrayList<Senales>();
         ok = true;
     }
     
@@ -121,7 +129,7 @@ public class ICPC
         }
     }
     
-    public void putSign(String intersectionA, String intersectionB)
+    public void putSign(String intersectionA, String intersectionB,int speedLimit)
     {
         for (int i=0; i<intersecciones.size();i++){
             if (intersecciones.get(i).getColor().equals(intersectionA)){
@@ -136,7 +144,7 @@ public class ICPC
         }
         aPosition =(xi+xf)/2;
         bPosition =(yi+yf)/2;
-        boolean validador = false,validador2 = false;
+        boolean validador = false,validador2 = false,validador3 = false;
         
         for (int i=0; i< rutas.size();i++){
             int[] listacordenadas=rutas.get(i).listRuta();
@@ -149,7 +157,11 @@ public class ICPC
             if (aPosition==senal.get(i).getx() && bPosition==senal.get(i).gety() ){
                 validador2=true;
             }
-        } 
+        }
+        
+        if (speedLimit>cost){
+            validador3=true;
+        }
         
         if(validador==false){
             ok = false;
@@ -157,9 +169,12 @@ public class ICPC
         }else if(validador2==true){
             ok = false;
             alerta("No se puede agregar la señal ya existe");
+        }else if(validador3==true){
+            ok = false;
+            alerta("El limite de la señal es mayor al costo");
         }else{
             ok = true;
-            Senales snl = new Senales(aPosition,bPosition,10);
+            Senales snl = new Senales(aPosition,bPosition,speedLimit);
             senal.add(snl);
         }       
     }
