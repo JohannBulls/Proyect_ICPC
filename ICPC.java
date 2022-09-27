@@ -3,7 +3,7 @@ import javax.swing.*;
 /**
  * Write a description of class ICPC here.
  *
- * @author (Johann Amaya)
+ * @author (Johann Amaya - Miguel Tellez)
  * @version (a version number or a date)
  */
 
