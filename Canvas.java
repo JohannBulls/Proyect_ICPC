@@ -63,6 +63,7 @@ public class Canvas{
         shapes = new HashMap <Object,ShapeDescription>();
     
     }
+    
     public void drawText(String text, int x, int y ) {
         graphic.drawString(text, x, y);
     }

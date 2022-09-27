@@ -34,13 +34,9 @@ public class ICPC
     }
     
     public ICPC (int length, int width, int cost){
-        this.length = length;
-        this.width = width;
+        this(length, width);
         this.cost = cost;
-        intersecciones = new ArrayList<Interseccion>();
-        rutas =new ArrayList<Ruta>();
-        senal=new ArrayList<Senales>();
-        ok = true;
+        
     }
     
     public void addIntersection(String color, int x, int y) {
