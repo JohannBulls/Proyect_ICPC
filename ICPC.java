@@ -3,7 +3,7 @@ import javax.swing.*;
 /**
  * Write a description of class ICPC here.
  *
- * @author (Johann Amaya - Miguel Tellez)
+ * @author (Amaya - Tellez)
  * @version (a version number or a date)
  */
 
@@ -33,12 +33,26 @@ public class ICPC
         ok = true;
     }
     
+    /**
+     * 
+     */
     public ICPC (int length, int width, int cost){
         this(length, width);
         this.cost = cost;
+    }
+    
+    /**
+     * 
+     */
+    public ICPC (int cost,int routes[][]){
+        
+        
         
     }
     
+    /**
+     * 
+     */
     public void addIntersection(String color, int x, int y) {
         boolean validador = false;
         
@@ -58,6 +72,9 @@ public class ICPC
         }
     }
     
+    /**
+     * 
+     */
      public void delItersection(String color)
     {
         for (int i = 0; i<intersecciones.size();i++){
@@ -76,6 +93,9 @@ public class ICPC
         ok = true;
     }
     
+    /**
+     * 
+     */
     public void addRoute(String intersectionA, String intersectionB)
     {           
         for (int i=0; i<intersecciones.size();i++){
@@ -112,6 +132,9 @@ public class ICPC
         }
     }
     
+    /**
+     * 
+     */
     public void delRoad(String locationA, String locationB){
         for (int i=0; i<intersecciones.size();i++){
             if (i == Integer.parseInt(locationA)){
@@ -125,6 +148,30 @@ public class ICPC
         }
     }
     
+    /**
+     * 
+     */
+    public void routeSpeedLimit(String intersectionA,String intersectionB, int speedLimit ){
+        for (int i=0; i < intersecciones.size();i++){
+            if (intersecciones.get(i).getColor().equals(intersectionA)){
+                xi=intersecciones.get(i).getx();
+                yi=intersecciones.get(i).gety();
+            }
+            
+            if (intersecciones.get(i).getColor().equals(intersectionB)){
+                xf=intersecciones.get(i).getx();
+                yf=intersecciones.get(i).gety();
+            }
+            
+        aPosition =(xi+xf)/2;
+        bPosition =(yi+yf)/2;
+        boolean validador = false,validador2 = false,validador3 = false;
+    }
+    }
+    
+    /**
+     * 
+     */
     public void putSign(String intersectionA, String intersectionB,int speedLimit)
     {
         for (int i=0; i<intersecciones.size();i++){
@@ -174,7 +221,10 @@ public class ICPC
             senal.add(snl);
         }       
     }
-
+    
+   /**
+    * 
+    */ 
    public void removeSign(String locationA, String locationB)
     {
         ok = true;
@@ -188,6 +238,16 @@ public class ICPC
         }
     }
     
+    /**
+     * 
+     */
+    public void wrongSigns(){
+        
+    }
+    
+    /**
+     * 
+     */
     public void consult(){
         ok = true;
         int in = intersecciones.size();
@@ -196,6 +256,9 @@ public class ICPC
         System.out.println("El numero de rutas es: " + rt);
     }
     
+    /**
+     * 
+     */
     public void makeVisible(){
         ok = true;
         for (int i=0 ; i<intersecciones.size();i++){
@@ -209,6 +272,9 @@ public class ICPC
         }
     }
     
+    /**
+     * 
+     */
     public void makeInvisible(){
         ok = true;
         for (int i=0 ; i<intersecciones.size();i++){
@@ -222,11 +288,17 @@ public class ICPC
         }
     }
     
+    /**
+     * 
+     */
     public void finish(){
         ok = true;
         System.exit(0);
     }
     
+    /**
+     * 
+     */
     public boolean ok(){
         return ok;
     }

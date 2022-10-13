@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=Senales
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Se\u00F1ales\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ we\ manipulate\ the\ signals\ and\ then\ draw\ them\ on\ the\ canvas.\r\n\ \r\n\ @author\ (Amaya\ -\ Tellez)\r\n
 comment1.params=x\ y\ cost
 comment1.target=Senales(int,\ int,\ int)
+comment1.text=\r\n\ \r\n
 comment2.params=
 comment2.target=void\ makeVisible()
+comment2.text=\r\n\ \r\n
 comment3.params=
 comment3.target=void\ makeInvisible()
+comment3.text=\r\n\ \r\n
 comment4.params=
 comment4.target=int\ getx()
+comment4.text=\r\n\ \r\n
 comment5.params=
 comment5.target=int\ gety()
+comment5.text=\r\n\ \r\n
 numComments=6

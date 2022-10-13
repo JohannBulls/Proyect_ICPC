@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.target=Ruta
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ruta\ here.\r\n\ \r\n\ @author\ (Johann\ Amaya)\ \r\n\ @version\ (Ciclo\ 2)\r\n
+comment0.text=\r\n\ a\ signal\ can\ be\ added\ and\ drawn\ on\ the\ canvas.\r\n\ \r\n\ @author\ (Amaya\ -\ Tellez)\ \r\n\ @version\ (Ciclo\ 2)\r\n
 comment1.params=xi\ yi\ xf\ yf
 comment1.target=Ruta(int,\ int,\ int,\ int)
+comment1.text=\r\n\ we\ can\ add\ a\ route\ with\ the\ coordinates\ X\ and\ Y,\ taking\ an\ initial\ x\ and\ a\ final\ x\r\n\ @\ xi,\ xf\ start\ and\ end\ position\ of\ an\ intersection\r\n\ @\ yi,\ yf\ start\ and\ end\ position\ of\ an\ intersection\r\n
 comment2.params=
 comment2.target=int[]\ listRuta()
+comment2.text=\r\n\ \r\n
 comment3.params=
 comment3.target=void\ makeVisible()
+comment3.text=\r\n\ we\ make\ the\ route\ Visible,\ if\ the\ route\ is\ already\ visible\ it\ does\ nothing\r\n
 comment4.params=
 comment4.target=void\ makeInvisible()
+comment4.text=\r\n\ we\ make\ the\ route\ Invisible,\ if\ the\ route\ is\ already\ visible\ it\ does\ nothing\r\n
 numComments=5

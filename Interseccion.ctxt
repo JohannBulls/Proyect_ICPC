@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Interseccion
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Interseccion\ here.\r\n\ \r\n\ @author\ (Johann\ Amaya)\ \r\n\ @version\ (Ciclo\ 2)\r\n
+comment0.text=\r\n\ we\ manipulate\ the\ intersections\ to\ then\ draw\ them\ on\ the\ canvas.\r\n\ \r\n\ @author\ (Amaya\ -\ Tellez)\ \r\n\ @version\ (Ciclo\ 2)\r\n
 comment1.params=color\ x\ y
 comment1.target=Interseccion(java.lang.String,\ int,\ int)
+comment1.text=\r\n\ we\ ask\ for\ the\ coordinates\ and\ the\ color\ that\ we\ want\ to\ give\ to\ the\ intersections\r\n\ @\ param\ x\ is\ the\ position\ we\ give\ to\ the\ intersection\ in\ x\r\n\ @\ param\ y\ is\ the\ position\ we\ give\ to\ the\ intersection\ in\ y\r\n\ @\ param\ color\ is\ the\ color\ assigned\ to\ the\ intersection\r\n
 comment2.params=
 comment2.target=java.lang.String\ getColor()
+comment2.text=\r\n\ we\ ask\ for\ a\ color\ to\ give\ it\ to\ the\ intersections\r\n
 comment3.params=
 comment3.target=void\ makeVisible()
+comment3.text=\r\n\ we\ make\ the\ route\ Visible,\ if\ the\ route\ is\ already\ visible\ it\ does\ nothing\r\n
 comment4.params=
 comment4.target=void\ makeInvisible()
+comment4.text=\r\n\ we\ make\ the\ route\ Invisible,\ if\ the\ route\ is\ already\ visible\ it\ does\ nothing\r\n
 comment5.params=
 comment5.target=int\ getx()
+comment5.text=\r\n\ we\ ask\ for\ a\ position\ in\ x\ to\ place\ it\ on\ the\ canvas\r\n
 comment6.params=
 comment6.target=int\ gety()
+comment6.text=\r\n\ we\ ask\ for\ a\ position\ in\ y\ to\ place\ it\ on\ the\ canvas\r\n
 numComments=7
