@@ -2,50 +2,35 @@
 dependency1.from=Circle
 dependency1.to=Canvas
 dependency1.type=UsesDependency
-<<<<<<< Updated upstream
-dependency10.from=Senales
-dependency10.to=Triangle
-=======
 dependency10.from=ICPC
-dependency10.to=Senales
->>>>>>> Stashed changes
+dependency10.to=Ruta
 dependency10.type=UsesDependency
-dependency11.from=Senales
-dependency11.to=Canvas
+dependency11.from=ICPC
+dependency11.to=Senales
 dependency11.type=UsesDependency
 dependency2.from=Rectangle
 dependency2.to=Canvas
 dependency2.type=UsesDependency
-<<<<<<< Updated upstream
 dependency3.from=Line
-=======
-dependency3.from=Triangle
->>>>>>> Stashed changes
 dependency3.to=Canvas
 dependency3.type=UsesDependency
-dependency4.from=Line
+dependency4.from=Triangle
 dependency4.to=Canvas
 dependency4.type=UsesDependency
-<<<<<<< Updated upstream
 dependency5.from=Ruta
 dependency5.to=Line
-=======
-dependency5.from=Senales
-dependency5.to=Triangle
->>>>>>> Stashed changes
 dependency5.type=UsesDependency
-dependency6.from=Senales
-dependency6.to=Canvas
+dependency6.from=Interseccion
+dependency6.to=Circle
 dependency6.type=UsesDependency
-dependency7.from=Interseccion
-dependency7.to=Circle
+dependency7.from=Senales
+dependency7.to=Triangle
 dependency7.type=UsesDependency
-dependency8.from=ICPC
-dependency8.to=Interseccion
+dependency8.from=Senales
+dependency8.to=Canvas
 dependency8.type=UsesDependency
-<<<<<<< Updated upstream
-dependency9.from=Interseccion
-dependency9.to=Circle
+dependency9.from=ICPC
+dependency9.to=Interseccion
 dependency9.type=UsesDependency
 editor.fx.0.height=737
 editor.fx.0.width=814
@@ -62,26 +47,6 @@ package.editor.y=0
 package.frame.height=828
 package.frame.width=1547
 package.numDependencies=11
-=======
-dependency9.from=ICPC
-dependency9.to=Ruta
-dependency9.type=UsesDependency
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=552
-editor.fx.0.y=100
-objectbench.height=66
-objectbench.width=1152
-package.divider.horizontal=0.6
-package.divider.vertical=0.9060489060489061
-package.editor.height=697
-package.editor.width=1036
-package.editor.x=219
-package.editor.y=51
-package.frame.height=877
-package.frame.width=1192
-package.numDependencies=10
->>>>>>> Stashed changes
 package.numTargets=10
 package.showExtends=true
 package.showUses=true
@@ -149,8 +114,8 @@ target7.name=Interseccion
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
-target7.x=870
-target7.y=180
+target7.x=810
+target7.y=190
 target8.height=70
 target8.name=README.md
 target8.type=TextTarget
@@ -162,5 +127,5 @@ target9.name=ICPC
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
-target9.x=670
-target9.y=430
+target9.x=680
+target9.y=400
